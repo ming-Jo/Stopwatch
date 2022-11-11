@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <h1 class="main-title">STOPWATCH</h1>
+    <article class="timer">
+        <h2 class="timer-tit">TIMER</h2>
+        <div class="timer-wrap">
+            <div class="cont-wrap">
+                <label class="time-txt" for="inpHour">HRS</label>
+                <input id="inpHour" class="inp-time" type="number" value="00" min="0" max="99">
+                <!-- <button class="add-time" type="button">▲</button> -->
+                <!-- <button class="sub-time" type="button">▼</button> -->
+            </div>
+            <div class="cont-wrap">
+                <label class="time-txt" for="inpMin">MIN</label>
+                <input id="inpMin" class="inp-time" type="number" value="00" min="0" max="99">
+                <!-- <button class="add-time" type="button">▲</button> -->
+                <!-- <button class="sub-time" type="button">▼</button> -->
+            </div>
+            <div class="cont-wrap">
+                <label class="time-txt" for="inpSec">SEC</label>
+                <input id="inpSec" class="inp-time" type="number" value="00" min="0" max="99">
+                <!-- <button class="add-time" type="button">▲</button> -->
+                <!-- <button class="sub-time" type="button">▼</button> -->
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <button class="btn-start" type="button" disabled >START</button>
+            <button class="btn-pause" type="button" hidden>PAUSE</button>
+            <button class="btn-reset" type="button" disabled >RESET</button>
+        </div>
+    </article>
+    <small class="copyright">ⓒ MINJI JO.</small>
+    
+    <script src="./src/app.js"></script>
+</body>
+</html>
