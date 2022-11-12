@@ -145,35 +145,43 @@ input[type='number']::-webkit-inner-spin-button {
     line-height: 17px;
     color: #df9eb9;
     border-radius: 50px;
-    background: #f5bcd3;
+    background-color: #f5bcd3;
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
-.timer .btn-start::before{
-    content: '';
-    position: absolute;
-    background: url(./img/icon-start-disabled.png) no-repeat 0px 0px;
-    width: 16px;
-    height: 16px;
-    left: 18%;
+.timer .btn-start {
+    background-image: url(./img/icon-start-disabled.png);
+    background-repeat: no-repeat;
+    background-position: 17px center;
 }
 
-.timer .btn-pause::before{
-    content: '';
-    position: absolute;
-    background: url(./img/icon-stop.png) no-repeat 0px 0px;
-    width: 16px;
-    height: 16px;
-    left: 18%;
+.timer .btn-reset {
+    background-image: url(./img/icon-reset-disabled.png);
+    background-repeat: no-repeat;
+    background-position: 17px center;
 }
 
-.timer .btn-reset::before{
-    content: '';
-    position: absolute;
-    background: url(./img/icon-reset-disabled.png) no-repeat 0px 0px;
-    width: 16px;
-    height: 16px;
-    left: 18%;
+/* 버튼이 active 되었을 때 */
+.timer .btn-start.active {
+    color: #fff;
+    background-color: #a694ff;
+    background-image: url(./img/icon-start.png);
+    background-repeat: no-repeat;
+}
+
+.timer .btn-pause.active {
+    color: #fff;
+    background-color: #ffde67;
+    background-image: url(./img/icon-stop.png);
+    background-repeat: no-repeat;
+    background-position: 17px center;
+}
+
+.timer .btn-reset.active {
+    color: #fff;
+    background-color: #ff9bb9;
+    background-image: url(./img/icon-reset.png);
+    background-repeat: no-repeat;
 }
 
 

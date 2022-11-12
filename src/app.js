@@ -8,46 +8,109 @@
 
 const $stopwatch = document.querySelector('.timer');
 
-const btnStart = document.querySelector('.btn-start');
-const btnReset = document.querySelector('.btn-reset');
-const btnHours = document.querySelector('.btn-hour');
-const btnMinute = document.querySelector('.btn-min');
-const btnSecond = document.querySelector('.btn-sec');
+const $inpHour = $stopwatch.querySelector('#inpHour');
+const $inpMinute = $stopwatch.querySelector('#inpMin');
+const $inpSecond = $stopwatch.querySelector('#inpSec');
+const $btnStart = $stopwatch.querySelector('.btn-start');
+const $btnPause = $stopwatch.querySelector('.btn-pause');
+const $btnReset = $stopwatch.querySelector('.btn-reset');
 
-let timer = 0
-let timeID = 0
 
-function inputTime() {
-    if(this.onclick) {
-        timeID = setInterval(() => {
-            timer += 1
-            this.textContent = timer
-        }, 1000)
-    } else {
-        clearInterval(timeID)
-    }
+function btnActive(){
+    if (($inpHour.value !== "00") || ($inpMinute.value !== "00") || ($inpSecond.value !== "00")) {
+        $btnStart.removeAttribute("disabled");
+        $btnReset.removeAttribute("disabled");
+
+        $btnStart.classList.add("active");
+        $btnReset.classList.add("active");
+        }
 }
 
-function inputSecond() { 
+// 버튼 클릭해서 시간 추가하는 기능
+// function inputTime() {
+//     if(this.onclick) {
+//         $inpHour.value += 1
+//     }
+// }
 
-}
+// function inputSecond() { 
+
+// }
+
+
+let timer;
+let hour = 0;
+let minute = 0;
+let second = 0;
+let allTime = 0;
+
 
 function startTimer() {
+    // 사용자가 입력한 hour, minute, second를 초 단위로 변환하여 저장
+    allTime = (+$inpHour.value * 3600) + (+$inpMinute.value * 60) + (+$inpSecond.value);
 
+    timer = setInterval(() => {
+        allTime --;
+        console.log(allTime)
+
+        minute = Math.floor(allTime / 60);
+        hour = Math.floor(minute / 60);
+        second = allTime % 60;
+        // minute = minute % 60;
+        $inpHour.value = String(hour).padStart(2, "0");
+        $inpMinute.value = String(minute).padStart(2, "0");
+        $inpSecond.value = String(second).padStart(2, "0");
+        
+        // if ()
+    }, 1000)
 }
 
+// pause 기능
 function pauseTimer() {
+    clearInterval(timer);
 
+    $btnPause.setAttribute("hidden", "hidden");
+    $btnStart.removeAttribute("hidden");
 }
 
+// reset 기능
 function resetTimer() {
+    clearInterval(timer);
 
+    hour = 0;
+    minute = 0;
+    second = 0;
+    allTime = 0;
+
+    $btnPause.setAttribute("hidden", "hidden");
+    $btnStart.removeAttribute("hidden");
+    $btnStart.setAttribute("disabled", "disabled");
+    $btnReset.setAttribute("disabled", "disabled");
+    $btnPause.classList.remove("active");
+    $btnStart.classList.remove("active");
+    $btnReset.classList.remove("active");
+
+    $inpHour.value = String(hour).padStart(2, "0");
+    $inpMinute.value = String(minute).padStart(2, "0");
+    $inpSecond.value = String(second).padStart(2, "0");
 }
 
-btnHours.addEventListener('click', inputTime);
-btnMinute.addEventListener('click', inputTime);
-btnSecond.addEventListener('click', inputSecond);
+// input에 값이 들어오면 버튼 비활성화 해제
+$inpHour.addEventListener('change', btnActive);
+$inpMinute.addEventListener('change', btnActive);
+$inpSecond.addEventListener('change', btnActive);
 
-btnStart.addEventListener('click', startTimer);
-btnReset.addEventListener('click', resetTimer);
+// start 버튼을 클릭했을 때
+$btnStart.addEventListener('click', () => {
+    $btnStart.setAttribute("hidden", "hidden");
+    $btnPause.removeAttribute("hidden");
+    $btnPause.classList.add("active");
+    startTimer();
+});
+
+// pause 버튼 클릭했을 때
+$btnPause.addEventListener('click', pauseTimer);
+
+// reset 버튼 클릭했을 때
+$btnReset.addEventListener('click', resetTimer);
 
