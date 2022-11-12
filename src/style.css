@@ -1,0 +1,196 @@
+body {
+    font-family: "Pretendard";
+    font-weight: 700;
+    background: radial-gradient(96.74% 276.79% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%) no-repeat;
+    height: 100vh;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.main-title {
+    width: fit-content;
+    margin: 80px auto 0;
+    padding: 15px 30px;
+    font-size: 2em;
+    text-align: center;
+    color: #A5B6EE;
+    border-radius: 50px;
+    border: 3px solid #A5B6EE;
+    box-shadow: inset 3px 3px 15px 0 rgba(55, 75, 124, 0.3);
+    background-color: #fff;
+}
+
+.timer {
+    width: 400px;
+    height: 360px;
+    margin: 60px auto;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+    /* background: linear-gradient(144.07deg, #5572BB 2.13%, #374B7C 102.97%); */
+    background: linear-gradient(145deg, #ffe7ce 10%, #ffddf9 40%, #c0ccff 90%);
+}
+
+.timer-tit {
+    padding-top: 48px;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #A5B6EE;
+    position: relative;
+}
+
+.timer-tit::after {
+    content: " ";
+    width: 312px;
+    height: 1px;
+    position: absolute;
+    bottom: -23px;
+    right: 44px;
+    background-color: #e4c0d1;
+    box-shadow: 0 1px 0 0 #fff;
+}
+
+.timer-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 57px;
+}
+
+.cont-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Timer 시간 조절 버튼 추가 시 사용 */
+/* .cont-wrap .add-time,
+.cont-wrap .sub-time {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 10px;
+    width: 80px;
+    color: #ffe8f3;
+}
+
+.cont-wrap .add-time {
+    margin-top: -80px;
+    padding: 5px 5px 20px;
+}
+
+.cont-wrap .sub-time {
+    margin-top: 5px;
+    padding: 20px 5px 5px;
+} */
+
+.cont-wrap label {
+    position: relative;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 10px;
+    color: #A5B6EE;
+}
+
+.cont-wrap input {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: #FFF;
+    border-radius: 5px;
+    border: 2px solid #fff1f6;
+    background: linear-gradient(314.28deg, #b6b7ff 0%, #ffcce1 90%);
+    overflow: hidden;
+}
+
+.cont-wrap+.cont-wrap .time-txt::before {
+    content: " ";
+    width: 6px;
+    height: 26px;
+    position: absolute;
+    top: 50px;
+    left: -44px;
+    background-image: url(./img/dot.png);
+}
+
+.cont-wrap input::after {
+    content: " ";
+    width: 85px;
+    height: 80px;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    background-size: cover;
+    background-image: url(./img/line.png);
+}
+
+/* 버튼 스타일 */
+.timer .btn-start,
+.timer .btn-pause,
+.timer .btn-reset {
+    position: relative;
+    margin: 0 6px;
+    padding: 16px 22px 16px 40px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    color: #df9eb9;
+    border-radius: 50px;
+    background-color: #f5bcd3;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.timer .btn-start {
+    background-image: url(./img/icon-start-disabled.png);
+    background-repeat: no-repeat;
+    background-position: 17px center;
+}
+
+.timer .btn-reset {
+    background-image: url(./img/icon-reset-disabled.png);
+    background-repeat: no-repeat;
+    background-position: 17px center;
+}
+
+/* 버튼이 active 되었을 때 */
+.timer .btn-start.active {
+    color: #fff;
+    background-color: #a694ff;
+    background-image: url(./img/icon-start.png);
+    background-repeat: no-repeat;
+}
+
+.timer .btn-pause.active {
+    color: #fff;
+    background-color: #ffde67;
+    background-image: url(./img/icon-stop.png);
+    background-repeat: no-repeat;
+    background-position: 17px center;
+}
+
+.timer .btn-reset.active {
+    color: #fff;
+    background-color: #ff9bb9;
+    background-image: url(./img/icon-reset.png);
+    background-repeat: no-repeat;
+}
+
+
+
+.copyright {
+    display: block;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #8596BF;
+}
