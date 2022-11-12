@@ -31,7 +31,6 @@ input[type='number']::-webkit-inner-spin-button {
     border-radius: 16px;
     text-align: center;
     box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
-    /* background: linear-gradient(144.07deg, #5572BB 2.13%, #374B7C 102.97%); */
     background: linear-gradient(145deg, #ffe7ce 10%, #ffddf9 40%, #c0ccff 90%);
 }
 
@@ -52,7 +51,7 @@ input[type='number']::-webkit-inner-spin-button {
     bottom: -23px;
     right: 44px;
     background-color: #e4c0d1;
-    box-shadow: 0 1px 0 0 #fff;
+    box-shadow: 0 1px 0 0 rgb(255, 250, 250);
 }
 
 .timer-wrap {
@@ -118,18 +117,23 @@ input[type='number']::-webkit-inner-spin-button {
     position: absolute;
     top: 50px;
     left: -44px;
-    background-image: url(./img/dot.png);
+    background-image: url(./img/dot.svg);
 }
 
-.cont-wrap input::after {
+.cont-wrap .time-txt::after {
     content: " ";
-    width: 85px;
+    width: 80px;
     height: 80px;
     position: absolute;
-    top: -3px;
-    left: -3px;
-    background-size: cover;
-    background-image: url(./img/line.png);
+    top: 24px;
+    right: -28px;
+    opacity: 40%;
+    background-size: contain;
+    background-image: url(./img/box.svg);
+}
+
+.inp-time::placeholder {
+    color: #fff;
 }
 
 /* 버튼 스타일 */
@@ -150,13 +154,13 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .timer .btn-start {
-    background-image: url(./img/icon-start-disabled.png);
+    background-image: url(./img/icon-start-disabled.svg);
     background-repeat: no-repeat;
     background-position: 17px center;
 }
 
 .timer .btn-reset {
-    background-image: url(./img/icon-reset-disabled.png);
+    background-image: url(./img/icon-reset-disabled.svg);
     background-repeat: no-repeat;
     background-position: 17px center;
 }
@@ -165,14 +169,14 @@ input[type='number']::-webkit-inner-spin-button {
 .timer .btn-start.active {
     color: #fff;
     background-color: #a694ff;
-    background-image: url(./img/icon-start.png);
+    background-image: url(./img/icon-start.svg);
     background-repeat: no-repeat;
 }
 
 .timer .btn-pause.active {
     color: #fff;
     background-color: #ffde67;
-    background-image: url(./img/icon-stop.png);
+    background-image: url(./img/icon-stop.svg);
     background-repeat: no-repeat;
     background-position: 17px center;
 }
@@ -180,7 +184,7 @@ input[type='number']::-webkit-inner-spin-button {
 .timer .btn-reset.active {
     color: #fff;
     background-color: #ff9bb9;
-    background-image: url(./img/icon-reset.png);
+    background-image: url(./img/icon-reset.svg);
     background-repeat: no-repeat;
 }
 

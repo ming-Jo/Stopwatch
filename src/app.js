@@ -116,4 +116,3 @@ $btnPause.addEventListener('click', pauseTimer);
 
 // reset 버튼 클릭했을 때
 $btnReset.addEventListener('click', resetTimer);
-
